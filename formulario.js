@@ -1,8 +1,15 @@
-var formulario = document.querySelector("#form")
+const formulario = document.getElementById("form")
+// Se modifica el selector de .form a formulario que es como se encuentra en el HTML
+
+/* formulario.addEventListener('submit',(e)=>{
+   
+
+}); */
 
 formulario.onsubmit = function(e) {
 
-  e.prevent();
+  e.preventDefault();
+  console.log("HOLAMUNDO")
   
   var n = formulario.elements[0]
   var e = formulario.elements[1]
@@ -28,7 +35,7 @@ if (nombre.length > 0
     && edad < 120) ) {
   agregarInvitado(nombre, edad, nacionalidad)
   }
-}
+} 
 
 var botonBorrar = document.createElement("button")
 botonBorrar.textContent = "Eliminar invitado"
@@ -55,17 +62,18 @@ function agregarInvitado(nombre, edad, nacionalidad) {
 var lista = document.getElementById("lista-de-invitados")
 
 var elementoLista = document.createElement("div")
-elementoLista.classList.added("elemento-lista")
+elementoLista.classList.add("elemento-lista")
+console.log(lista)
 lista.appendChild(elementoLista)
 
-var spanNombre = document.createElement("span")
+/* var spanNombre = document.createElement("span")
 var inputNombre = document.createElement("input")
 var espacio = document.createElement("br")
 spanNombre.textContent = "Nombre: "
 inputNombre.value = nombre 
 elementoLista.appendChild(spanNombre)
 elementoLista.appendChild(inputNombre)
-elementoLista.appendChild(espacio)
+elementoLista.appendChild(espacio) */
 
 function crearElemento(descripcion, valor) {
 var spanNombre = document.createElement("span")
